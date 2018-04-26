@@ -1,0 +1,20 @@
+{
+  "name": "graphql-yoga-todoapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/otofu-square/graphql-yoga-todoapp",
+  "author": "otofu-square <yukita@feedforce.jp>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./build/main.js",
+    "dev": "backpack dev",
+    "build": "backpack build"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.0.0",
+    "backpack-core": "^0.7.0",
+    "ts-node": "^6.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3"
+  }
+}
