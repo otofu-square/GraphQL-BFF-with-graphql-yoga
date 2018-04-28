@@ -1,22 +1,17 @@
 import { User } from './types';
+import { api } from './api';
 
-type UserQuery = () => User;
-const userQuery: UserQuery = () => ({
-  id: 1,
-  name: 'hoge',
-  username: 'fuga',
-  email: 'hoge@gmail.com',
-});
+type UserQuery = (a1: any, a2: { id: number }) => Promise<User>;
+const userQuery: UserQuery = async (_, { id }) => {
+  const user = await api.show(id);
+  return { ...user };
+};
 
-type UsersQuery = (a1: any, a2: { id: string }) => User[];
-const usersQuery: UsersQuery = (_, { id }) => [
-  {
-    id: 1,
-    name: 'hoge',
-    username: 'fuga',
-    email: 'hoge@gmail.com',
-  },
-];
+type UsersQuery = () => Promise<User[]>;
+const usersQuery: UsersQuery = async () => {
+  const users = await api.index();
+  return [...users];
+};
 
 export const Query = {
   user: userQuery,

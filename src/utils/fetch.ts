@@ -1,4 +1,4 @@
-import fetch, { ResponseType } from 'node-fetch';
+import fetch from 'node-fetch';
 
 type Method = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 

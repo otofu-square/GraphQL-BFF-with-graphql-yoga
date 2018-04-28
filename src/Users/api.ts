@@ -1,28 +1,7 @@
 import { client } from '../utils/fetch';
+import { User } from './types';
 
-type UserResponse = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-};
+type UserResponse = User;
 
 type IndexResponse = UserResponse[];
 const index = async () => client<IndexResponse>('GET', '/users');
