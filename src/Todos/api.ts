@@ -8,8 +8,12 @@ type TodoResponse = {
 };
 
 type IndexResponse = TodoResponse[];
-export const index = async () => client<IndexResponse>('GET', '/todos');
+const index = async () => client<IndexResponse>('GET', '/todos');
 
 type ShowResponse = TodoResponse;
-export const show = async (id: number) =>
-  client<ShowResponse>('GET', `/todos/${id}`);
+const show = async (id: number) => client<ShowResponse>('GET', `/todos/${id}`);
+
+export const api = {
+  index,
+  show,
+};

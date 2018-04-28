@@ -25,8 +25,12 @@ type UserResponse = {
 };
 
 type IndexResponse = UserResponse[];
-export const index = async () => client<IndexResponse>('GET', '/users');
+const index = async () => client<IndexResponse>('GET', '/users');
 
 type ShowResponse = UserResponse;
-export const show = async (id: number) =>
-  client<ShowResponse>('GET', `/users/${id}`);
+const show = async (id: number) => client<ShowResponse>('GET', `/users/${id}`);
+
+export const api = {
+  index,
+  show,
+};
