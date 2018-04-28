@@ -18,7 +18,6 @@
   "dependencies": {
     "graphql": "^0.13.2",
     "graphql-yoga": "^1.9.2",
-    "merge-graphql-schemas": "^1.5.1",
-    "merge-graphql-schemas-ts": "^1.1.4"
+    "merge-graphql-schemas": "^1.5.1"
   }
 }
